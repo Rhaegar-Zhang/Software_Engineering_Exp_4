@@ -3,6 +3,16 @@
 #include <string>
 #include <cstdlib>
 
+class InputType{
+    std::string type;
+    int min_val, max_val;
+public:
+    InputType(std::string _type, int _min_val, int _max_val) : type(_type), min_val(_min_val), max_val(_max_val) {}
+    std::string get_type() const {return type;}
+    int get_min_val() const {return min_val;}
+    int get_max_val() const {return max_val;}
+};
+
 //Base class of all possible inputs.
 class Input{
 public:
@@ -45,7 +55,7 @@ private:
     //Store the input generated randomly.
     std::vector<std::vector<Input*> > program_input;
     //Read the stdin.txt file.
-    void read_stdin_file(std::string);
+    std::vector<InputType*> read_stdin_file(std::string);
 public:
     void gen_input(int num, std::string stdin_path);
 };
