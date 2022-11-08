@@ -68,9 +68,24 @@ std::vector<InputType*> InputGen::read_stdin_file(std::string stdin_path){
 void ::InputGen::gen_input(int num, std::string stdin_path){
     std::vector<InputType*> random_input = read_stdin_file(stdin_path);
     for(int i = 0; i < num; ++i){
-        std::vector<Input*> one_input;
+        std::vector<Input*> singal_input;
         for(int j = 0; j < random_input.size(); ++j){
-
+            if(random_input[j]->get_type() == "int"){
+                Input* int_type = new IntInput(random_input[j]->get_min_val(), random_input[j]->get_max_val());
+                int_type->gen_input();
+                singal_input.push_back(int_type);
+            }
+            else if(random_input[j]->get_type() == "char"){
+                Input* char_type = new CharInput();
+                char_type->gen_input();
+                singal_input.push_back(char_type);
+            }
+            else if(random_input[j]->get_type() == "string"){
+                Input* string_type = new StringInput(random_input[j]->get_min_val(), random_input[j]->get_max_val());
+                string_type->gen_input();
+                singal_input.push_back(string_type);
+            }
         }
+        program_input.push_back(singal_input);
     }
 }
