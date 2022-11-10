@@ -9,7 +9,6 @@
 class Execute{
 public:
     void exec_program();
-    void compile_program();
 };
 
 #endif
