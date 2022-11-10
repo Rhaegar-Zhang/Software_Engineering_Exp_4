@@ -11,6 +11,7 @@
 
 class FileTreeBranch{
 public:
+    std::string curr_dir;
     int stdin_index;
     std::vector<std::string> singal_branch;
 };
