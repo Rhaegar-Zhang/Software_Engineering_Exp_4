@@ -20,7 +20,7 @@ FileTreeBranch* GetFileTree::gen_singal_branch(char* basepath){
         if(strcmp(ptr->d_name, ".") == 0 || strcmp(ptr->d_name, "..") == 0)
             continue;
         else if(ptr->d_type == 8){
-            std::string abs_path = std::string(basepath) + std::string(ptr->d_name);
+            std::string abs_path = std::string(ptr->d_name);
             p->singal_branch.push_back(abs_path);
             if(abs_path.find(".txt") != std::string::npos){
                 p->stdin_index = i;
