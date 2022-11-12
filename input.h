@@ -52,10 +52,8 @@ public:
 //Class to generate random inputs.
 class InputGen{
 private:
-    //Store the input generated randomly.
-    std::vector<std::vector<Input*> > program_input;
     //Read the stdin.txt file.
-    std::vector<InputType*> read_stdin_file(std::string);
+    std::vector<InputType*>* read_stdin_file(std::string);
 public:
-    void gen_input(int num, std::string stdin_path);
+    void gen_input(int num, std::string stdin_path, std::string dir_path);
 };
