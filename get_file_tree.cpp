@@ -15,7 +15,7 @@ FileTreeBranch* GetFileTree::gen_singal_branch(char* basepath){
     if((dir = opendir(basepath)) == NULL)
         exit(1);
     int i = 0;
-    p->curr_dir = std::string(basepath);
+    p->curr_dir = std::string(basepath) + "/";
     while((ptr = readdir(dir)) != NULL){
         if(strcmp(ptr->d_name, ".") == 0 || strcmp(ptr->d_name, "..") == 0)
             continue;
