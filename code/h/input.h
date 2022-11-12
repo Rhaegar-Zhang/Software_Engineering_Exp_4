@@ -1,3 +1,6 @@
+#ifndef INPUT_H
+#define INPUT_H
+
 #include <vector>
 #include <fstream>
 #include <string>
@@ -57,3 +60,5 @@ private:
 public:
     void gen_input(int num, std::string stdin_path, std::string dir_path);
 };
+
+#endif

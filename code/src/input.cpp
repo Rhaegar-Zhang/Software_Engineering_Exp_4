@@ -1,4 +1,4 @@
-#include "input.h"
+#include "../h/input.h"
 
 IntInput::IntInput(int min_value, int max_value){
     this->min_value = min_value;
@@ -67,12 +67,12 @@ std::vector<InputType*>* InputGen::read_stdin_file(std::string stdin_path){
 
 void ::InputGen::gen_input(int num, std::string stdin_path, std::string dir_path){
     std::vector<InputType*>* random_input = read_stdin_file(stdin_path);
-    std::string mkdir_cmd = "mkdir" + dir_path + "testcases";
+    std::string mkdir_cmd = "mkdir " + dir_path + "testcases";
     system(mkdir_cmd.c_str());
     for(int i = 0; i < num; ++i){
         std::string test_file = dir_path + "testcases" + "/testcase" + std::to_string(i) + ".txt";
         std::ofstream fout(test_file);
-        if(!random_input){
+        if(random_input){
             for(int j = 0; j < random_input->size(); ++j){
                 if((*random_input)[j]->get_type() == "int"){
                     IntInput *p = new IntInput((*random_input)[j]->get_min_val(), (*random_input)[j]->get_max_val());

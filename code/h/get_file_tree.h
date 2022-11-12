@@ -9,7 +9,7 @@
 #include <vector>
 #include <string>
 
-class FileTreeBranch{
+class FileFolder{
 public:
     std::string curr_dir;
     int stdin_index;
@@ -18,13 +18,13 @@ public:
 
 class GetFileTree{
 private:
-    std::vector<FileTreeBranch*>* file_tree;
+    std::vector<FileFolder*>* file_tree;
+    FileFolder* gen_singal_branch(char* basepath);
 public:
     GetFileTree();
     ~GetFileTree();
     void gen_file_tree(char* basepath);
-    FileTreeBranch* gen_singal_branch(char* basepath);
-    std::vector<FileTreeBranch*>* get_file_tree();
+    std::vector<FileFolder*>* get_file_tree();
 };
 
 #endif
