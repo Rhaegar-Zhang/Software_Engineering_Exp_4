@@ -6,7 +6,7 @@ OUT_PATH = ./code/outfile/
 OBJ = $(OUT_PATH)main.o $(OUT_PATH)get_file_tree.o $(OUT_PATH)input.o $(OUT_PATH)execute.o $(OUT_PATH)judge.o
 
 $(TARGET) : $(OBJ)     
-	-$(CC) $(OBJ) -o $(TARGET) 
+	-$(CC) $(OBJ) -o $(OUT_PATH)$(TARGET) 
 
 mian.o : $(SRC_PATH)main.cpp $(INCLUDE_PATH)get_file_tree.h $(INCLUDE_PATH)input.h $(INCLUDE_PATH)execute.h $(INCLUDE_PATH)judge.h
 	-$(CC) -c $(SRC_PATH)main.cpp -o $(OUT_PATH)main.o

@@ -4,7 +4,7 @@
 #include "../h/judge.h"
 
 int main(){
-    char* base_path = "../../input";
+    char* base_path = (char*)"../../input";
     GetFileTree* getfile = new GetFileTree();
     Execute *exec = new Execute();
     InputGen *input_gen = new InputGen();
