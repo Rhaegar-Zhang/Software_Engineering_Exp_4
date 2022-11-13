@@ -1,8 +1,8 @@
 #include "../h/judge.h"
 
 void Judge::judge(std::string cur_dir, std::vector<std::string>& file_list){
-    std::string equal_file = "../../output/equal.csv";
-    std::string inequal_file = "../../output/inequal.csv";
+    std::string equal_file = "./output/equal.csv";
+    std::string inequal_file = "./output/inequal.csv";
     std::ofstream equal_fout(equal_file, std::ios::app);
     std::ofstream inequal_fout(inequal_file, std::ios::app);
     for(auto i = file_list.begin(); i != file_list.end(); ++i)
