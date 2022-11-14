@@ -8,11 +8,11 @@
 
 //The class represents the input type.
 //When read stdin from stdin_format.txt the class will be instantiated to corresponding object.
-//Variable std::string type in this class represents the type of stdin it can be int char or string.
-//These two variables min_val and max_val represents the min value and max value when type is int 
-//or the min length and max length when the type is string.
 class InputType{
+    //Variable std::string type in this class represents the type of stdin it can be int char or string.
     std::string type;
+    //These two variables min_val and max_val represents the min value and max value when type is int 
+    //or the min length and max length when the type is string.
     int min_val, max_val;
 public:
     InputType(std::string _type, int _min_val, int _max_val) : type(_type), min_val(_min_val), max_val(_max_val) {}
