@@ -18,7 +18,7 @@ $(OBJ):
 	@mv  ${OBJ} ${OUT_DIR}/
 
 clean:
-	@rm -rf $(TARGET) $(OUT_DIR)
+	@rm -rf $(TARGET) $(OUT_DIR) ./output
 
 all:
 	@echo ${SRC_PATH}
