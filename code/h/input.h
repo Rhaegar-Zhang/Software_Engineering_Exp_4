@@ -24,6 +24,8 @@ public:
 
 //Base class of all possible input type.
 class Input{
+protected:
+    int min_val, max_val;
 public:
     //Generate a random input with corresponding type
     virtual void gen_input() = 0;
@@ -39,7 +41,6 @@ public:
     //Get the generated random input
     int get_random_input();
 private:
-    int min_value, max_value;
     int random_input;
 };
 
@@ -53,7 +54,6 @@ public:
     //Get the generated random input
     char* get_random_input();
 private:
-    int min_length, max_length;
     char* random_input;
 };
 
